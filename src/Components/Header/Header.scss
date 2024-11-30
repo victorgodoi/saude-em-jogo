@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  background-color: rgba(255, 0, 0, 0);
+  height: 110px;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 67px;
+    height: 66px;
+  }
+
+  p {
+    font-size: 64px;
+    color: #FFDE00;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  }
+}
