@@ -11,11 +11,13 @@ function Login() {
           <img src={ImgHeader} alt='lâmpada acesa' title='lâmpada acesa' />
         </div>
         <div id='login'>
-          <p>SAÚDE EM JOGO</p>
-          <img src={Logo} alt='Cabeça com quebra-cabeça' title='Cabeça com quebra-cabeça' />
-          <div>
-            <input placeHolder='Digite seu nome' />
-            <Button />
+          <div className='divLogin'>
+            <p>SAÚDE EM JOGO</p>
+            <img src={Logo} alt='Cabeça com quebra-cabeça' title='Cabeça com quebra-cabeça' />
+            <div>
+              <input placeHolder='Digite seu nome' />
+              <Button />
+            </div>
           </div>
         </div>
       </div>
