@@ -1,7 +1,7 @@
 import './Button.scss';
 
-function Button() {
-  return <button>Entrar</button>
+function Button({ text, color }) {
+  return <button style={{ backgroundColor: color }} >{text}</button>
 };
 
 export default Button;

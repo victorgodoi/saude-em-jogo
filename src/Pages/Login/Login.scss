@@ -79,7 +79,13 @@
 }
 
 @media only screen and (max-width: 760px) {
-  #login p {
-    font-size: 79px;
+  #login .divLogin {
+    p {
+      font-size: 79px;
+    }
+
+    img {
+      margin-top: 90px;
+    }
   }
 }
