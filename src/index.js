@@ -5,6 +5,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Container from './Components/Container';
 import Login from './Pages/Login';
+import Home from './Pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Container>
         <Routes>
           <Route element={<Login />} path="/" exact />
+          <Route element={<Home />} path="/home" exact />
         </Routes>
       </Container>
     </BrowserRouter>
