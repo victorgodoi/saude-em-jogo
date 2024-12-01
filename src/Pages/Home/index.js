@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className='pageHome'>
       <div className='contentHome'>
-        <Header text='Bem-Vindo ao Saúde em Jogo' />
+        <Header text='Bem-Vindo ao Saúde em Jogo' color='#ff000000' />
         <div id='home'>
           <div className='divHome'>
             <p className='titleHome'>Estimule sua memória, divirta-se e cuide da sua mente!</p>
