@@ -11,7 +11,7 @@ function Diagnosis() {
         <div id='diagnosis'>
           <div className='divDiagnosis'>
           </div>
-          <Footer color='#FFF' />
+          <Footer color='#F4D2FB' />
         </div>
       </div>
     </div>
