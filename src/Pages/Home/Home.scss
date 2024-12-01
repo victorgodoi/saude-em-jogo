@@ -81,3 +81,69 @@
     }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  #home {
+    .divHome {
+      .titleHome {
+        font-size: 38px;
+      }
+
+      .textHome {
+        font-size: 22px;
+      }
+
+      .subTitleHome {
+        font-size: 32px;
+      }
+
+      ul {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  #home {
+    .divHome {
+      .titleHome {
+        font-size: 32px;
+        margin-top: 15px;
+      }
+
+      .welcome {
+        font-size: 28px;
+        margin: 15px 0px;
+      }
+
+      .textHome {
+        font-size: 22px;
+      }
+
+      .subTitleHome {
+        font-size: 28px;
+        margin: 15px 0px;
+      }
+
+      ul {
+        font-size: 20px;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        li {
+          background-color: #b984c4b0;
+          border-radius: 10px;
+          flex-direction: column;
+          width: 100%;
+          padding: 5px;
+          padding-top: 0;
+        }
+      }
+
+      .divButton {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
