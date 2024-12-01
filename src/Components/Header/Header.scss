@@ -16,12 +16,20 @@ header {
     color: #FFDE00;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   }
+
+  #divHeader {
+    width: 67px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
   header {
     p {
       font-size: 52px;
+    }
+
+    #divHeader {
+      width: 0px;
     }
   }
 }
@@ -31,6 +39,10 @@ header {
     p {
       font-size: 40px;
       text-align: center;
+    }
+
+    #divHeader {
+      width: 0px;
     }
   }
 }

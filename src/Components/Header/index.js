@@ -6,7 +6,7 @@ function Header({ text, color }) {
     <header style={{ backgroundColor: color }}>
       <img src={ImgHeader} alt='lâmpada acesa' title='lâmpada acesa' />
       <p>{text}</p>
-      <div />
+      <div id='divHeader' />
     </header>
   );
 }
