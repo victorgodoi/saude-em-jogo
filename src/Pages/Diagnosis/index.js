@@ -1,7 +1,7 @@
 import './Diagnosis.scss';
 import Header from '../../Components/Header';
-import Button from '../../Components/Button';
 import Footer from '../../Components/Footer';
+import ButtonDiagnosis from '../../Components/ButtonDiagnosis';
 
 function Diagnosis() {
   return (
@@ -10,6 +10,20 @@ function Diagnosis() {
         <Header text='Diagnóstico' color='#9F74BE' />
         <div id='diagnosis'>
           <div className='divDiagnosis'>
+            <p>Selecione o tempo de jogo para visualizar seu desempenho:</p>
+            <div className='divButtons'>
+              <div>
+                <ButtonDiagnosis text='0 a 15 segundos' url='' />
+                <ButtonDiagnosis text='16 a 30 segundos' url='' />
+              </div>
+              <div>
+                <ButtonDiagnosis text='31 a 45 segundos' url='' />
+                <ButtonDiagnosis text='46 a 55 segundoss' url='' />
+              </div>
+              <div>
+                <ButtonDiagnosis text='56 a 60 segundos' url='' />
+              </div>
+            </div>
           </div>
           <Footer color='#F4D2FB' />
         </div>
