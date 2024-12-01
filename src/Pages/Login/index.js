@@ -16,7 +16,7 @@ function Login() {
             <img src={Logo} alt='Cabeça com quebra-cabeça' title='Cabeça com quebra-cabeça' />
             <div>
               <input placeHolder='Digite seu nome' />
-              <Button color='#FFDE00' text='Entrar' />
+              <Button url='/home' color='#FFDE00' text='Entrar' />
             </div>
           </div>
         </div>
