@@ -14,7 +14,7 @@ function Diagnosis() {
             <p>Selecione o tempo de jogo para visualizar seu desempenho:</p>
             <div className='divButtons'>
               <div>
-                <ButtonDiagnosis text='0 a 15 segundos' url='' />
+                <ButtonDiagnosis text='0 a 15 segundos' url='/firstTime' />
                 <ButtonDiagnosis text='16 a 30 segundos' url='' />
               </div>
               <div>

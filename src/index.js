@@ -7,6 +7,7 @@ import Container from './Components/Container';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Diagnosis from './Pages/Diagnosis';
+import FirstTime from './Pages/FirstTime';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
           <Route element={<Login />} path="/" exact />
           <Route element={<Home />} path="/home" exact />
           <Route element={<Diagnosis />} path="/diagnosis" exact />
+          <Route element={<FirstTime />} path="/firstTime" exact />
         </Routes>
       </Container>
     </BrowserRouter>

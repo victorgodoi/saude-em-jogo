@@ -1,0 +1,65 @@
+#boxDiagnosis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  margin-top: 75px;
+  width: 85%;
+
+  .boxTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9F74BE;
+    border-radius: 10px;
+    height: 70px;
+    width: 90%;
+
+    p {
+      margin: 0;
+      font-size: 32px;
+      color: #FFFFFF;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #FFDE00;
+    position: relative;
+    padding: 10px 40px 40px 40px;
+
+    div {
+      display: flex;
+      position: relative;
+
+      img {
+        width: 50px;
+        position: absolute;
+        left: 140px;
+        top: -17px;
+        height: auto;
+      }
+
+      p {
+        margin: 0;
+        font-size: 32px;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 890px;
+      top: 243px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 32px;
+      text-align: center;
+    }
+
+  }
+}

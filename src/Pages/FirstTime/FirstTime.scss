@@ -1,0 +1,27 @@
+.pageFirstTime {
+  background-color: #F4D2FB;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+
+  .contentFirstTime {
+    padding: 0px;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.firstTime {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .divFirstTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
