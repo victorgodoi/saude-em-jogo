@@ -33,13 +33,11 @@
 
     div {
       display: flex;
-      position: relative;
+      gap: 5px;
 
-      img {
-        width: 50px;
-        position: absolute;
-        left: 140px;
-        top: -17px;
+      #party {
+        width: 40px;
+        position: unset;
         height: auto;
       }
 
@@ -51,8 +49,8 @@
 
     img {
       position: absolute;
-      left: 890px;
-      top: 243px;
+      left: 1130px;
+      top: 202px;
     }
 
     p {
