@@ -19,10 +19,31 @@
   flex-direction: column;
   justify-content: space-between;
 
+  div {
+    .relogio {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+
+      img {
+        width: 70px;
+        height: auto
+      }
+    }
+  }
+
   .divDiagnosis {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    p {
+      font-size: 36px;
+      text-align: center;
+      color: #FFFFFF;
+      margin-top: 25px;
+      margin-bottom: 80px;
+    }
 
     .divButtons {
       display: flex;
@@ -35,6 +56,31 @@
 
         &:last-of-type {
           justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 810px) {
+
+  #diagnosis {
+    div {
+      .relogio {
+        margin: 20px 20px 10px 0px;
+      }
+    }
+
+    .divDiagnosis {
+      p {
+        font-size: 30px;
+        padding: 0px 10px;
+      }
+
+      .divButtons {
+        div {
+          flex-direction: column;
+          gap: 80px;
         }
       }
     }

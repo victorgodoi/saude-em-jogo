@@ -2,6 +2,7 @@ import './Diagnosis.scss';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import ButtonDiagnosis from '../../Components/ButtonDiagnosis';
+import IconRelogio from '../../Images/IconRelogio.svg';
 
 function Diagnosis() {
   return (
@@ -25,7 +26,12 @@ function Diagnosis() {
               </div>
             </div>
           </div>
-          <Footer color='#F4D2FB' />
+          <div>
+            <div className='relogio'>
+              <img src={IconRelogio} alt='relógio' title='relógio' />
+            </div>
+            <Footer color='#F4D2FB' />
+          </div>
         </div>
       </div>
     </div>
