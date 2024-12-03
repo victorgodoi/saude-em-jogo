@@ -19,10 +19,17 @@ module.exports = [
     },
     extends: ['prettier'],
     rules: {
+      "no-unused-vars": ["error", {
+        "vars": "all",
+        "args": "after-used",
+        "caughtErrors": "all",
+        "ignoreRestSiblings": false,
+        "reportUsedIgnorePattern": false
+      }],
       // ... any rules you want
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
-     },
+    },
     // ... others are omitted for brevity
   },
 ];
