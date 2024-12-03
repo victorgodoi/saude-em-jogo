@@ -14,13 +14,14 @@
     border-radius: 10px;
     min-height: 70px;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 5px;
     width: 90%;
 
     p {
       margin: 0;
       font-size: 32px;
       color: #FFFFFF;
+      font-family: "Baloo 2", serif;
     }
   }
 
@@ -39,14 +40,15 @@
       gap: 5px;
 
       #party {
-        width: 40px;
+        width: auto;
         position: unset;
-        height: auto;
+        height: 40px;
       }
 
       p {
         margin: 0;
         font-size: 32px;
+        font-family: "Baloo 2", serif;
       }
     }
 

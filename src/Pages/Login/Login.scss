@@ -41,6 +41,14 @@
     align-items: center;
     text-align: center;
 
+    #mensageError {
+      font-size: 22px;
+      color: red;
+      font-family: "Sura", serif;
+      -webkit-text-stroke: 0px #ffffff;
+      text-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+      margin: 5px 0;
+    }
 
     p {
       font-size: 96px;
