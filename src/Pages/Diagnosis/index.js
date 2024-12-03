@@ -15,14 +15,14 @@ function Diagnosis() {
             <div className='divButtons'>
               <div>
                 <ButtonDiagnosis text='0 a 15 segundos' url='/firstTime' />
-                <ButtonDiagnosis text='16 a 30 segundos' url='' />
+                <ButtonDiagnosis text='16 a 30 segundos' url='/secondTime' />
               </div>
               <div>
-                <ButtonDiagnosis text='31 a 45 segundos' url='' />
-                <ButtonDiagnosis text='46 a 55 segundoss' url='' />
+                <ButtonDiagnosis text='31 a 45 segundos' url='/thirdTime' />
+                <ButtonDiagnosis text='46 a 55 segundoss' url='/fourthTime' />
               </div>
               <div>
-                <ButtonDiagnosis text='56 a 60 segundos' url='' />
+                <ButtonDiagnosis text='56 a 60 segundos' url='/fifthTime' />
               </div>
             </div>
           </div>
