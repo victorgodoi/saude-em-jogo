@@ -47,10 +47,11 @@
       }
     }
 
-    img {
+    #medal {
       position: absolute;
-      left: 1130px;
-      top: 202px;
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%);
     }
 
     p {

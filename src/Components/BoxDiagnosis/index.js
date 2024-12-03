@@ -14,7 +14,7 @@ function BoxDiagnosis({ title, text }) {
           <img id='party' src={IconParty} alt='ícone de festa' title='ícone de festa' />
         </div>
         <p>{text}</p>
-        <img src={IconMedalha} alt='ícone de medalha' title='ícone de medalha' />
+        <img id='medal' src={IconMedalha} alt='ícone de medalha' title='ícone de medalha' />
       </div>
     </div>
   );
