@@ -12,6 +12,7 @@ import SecondTime from './Pages/SecondTime';
 import ThirdTime from './Pages/ThirdTime';
 import FourthTime from './Pages/FourthTime';
 import FifthTime from './Pages/FifthTime';
+import Game from './Pages/Game';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,8 @@ root.render(
           <Route element={<ThirdTime />} path="/thirdTime" exact />
           <Route element={<FourthTime />} path="/fourthTime" exact />
           <Route element={<FifthTime />} path="/fifthTime" exact />
+          <Route element={<Game />} path="/game" exact />
+
         </Routes>
       </Container>
     </BrowserRouter>

@@ -8,7 +8,7 @@ function BoxDiagnosis({ title, text }) {
       <div className='boxTitle'>
         <p>{title}</p>
       </div>
-      <div className='card'>
+      <div className='cardDiagnosis'>
         <div>
           <p>Parabéns!</p>
           <img id='party' src={IconParty} alt='ícone de festa' title='ícone de festa' />
