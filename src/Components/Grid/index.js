@@ -1,6 +1,6 @@
 import './Grid.scss';
 import { Card } from '../Card';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { duplicateRegenerateSortArray } from '../../utils/card-utils';
 import Cronometro from '../Cronometro';
 import { useNavigate } from 'react-router-dom';
@@ -19,19 +19,21 @@ export function Grid({ cards }) {
   const navigate = useNavigate(); // Hook para navegação
 
   const handleReset = () => {
-    setStateCards(duplicateRegenerateSortArray(cards));
+    setIsRunning(false); // Para o cronômetro
+    setStateCards(duplicateRegenerateSortArray(cards)); // Reseta as cartas
     first.current = null;
     second.current = null;
     unflip.current = false;
-    setMatches(0);
-    setMoves(0);
-    setIsRunning(false);
-    setTime(0); // Reseta o tempo
+    setMatches(0); // Reseta acertos
+    setMoves(0); // Reseta movimentos
+    setTime(0); // Reseta o tempo decorrido
   };
 
   const handleTimeUp = () => {
-    handleReset(); // Resetar o jogo
+    setIsRunning(false); // Garante que o cronômetro está parado
+    handleReset(); // Reseta o estado do jogo
   };
+
 
   const handleTimeUpdate = (tempoDecorrido) => {
     setTime(tempoDecorrido); // Atualiza o tempo decorrido
@@ -40,7 +42,7 @@ export function Grid({ cards }) {
   const handleClick = (id) => {
     if (!isRunning) {
       setIsRunning(true); // Iniciar o cronômetro ao clicar no primeiro card
-    }
+    };
 
     const newStateCards = stateCards.map((card) => {
       if (card.id !== id || card.flipped) return card;
@@ -98,14 +100,28 @@ export function Grid({ cards }) {
     }
   };
 
+  const [finish, setFinish] = useState(false);
+  const newCronometro = 60 - time;
+
+  useEffect(() => {
+    if (matches === 8) {
+      setFinish(true);
+    }
+  }, [matches]);
+
   return (
     <>
       <div className="text">
-        <Cronometro
-          isRunning={isRunning}
-          onTimeUp={handleTimeUp}
-          onTimeUpdate={handleTimeUpdate}
-        />
+        <div style={{ display: finish ? 'none' : 'block' }}>
+          <Cronometro
+            isRunning={isRunning}
+            onTimeUp={handleTimeUp}
+            onTimeUpdate={handleTimeUpdate}
+          />
+        </div>
+        <div style={{ display: finish ? 'block' : 'none', fontFamily: '"Orbitron", sans-serif', fontSize: '32px' }}>
+          0:{newCronometro}
+        </div>
         <div>
           <p>Movimentos: {moves} | Acertos: {matches}</p>
         </div>

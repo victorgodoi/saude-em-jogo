@@ -18,10 +18,17 @@ function Cronometro({ isRunning, onTimeUp, onTimeUpdate }) {
       return () => clearTimeout(timer); // Limpa o timer quando desmontar ou isRunning mudar
     }
 
-    if (tempoRestante === 0) {
+    if (isRunning && tempoRestante === 0) {
       onTimeUp(); // Notifica que o tempo acabou
     }
   }, [isRunning, tempoRestante, onTimeUp, onTimeUpdate]);
+
+  // Adiciona um reset explícito ao estado do cronômetro quando `isRunning` é redefinido
+  useEffect(() => {
+    if (!isRunning) {
+      setTempoRestante(TEMPO_TOTAL); // Reseta o tempo restante quando o jogo é reiniciado
+    }
+  }, [isRunning]);
 
   const formataTempo = (time) => {
     const minutes = Math.floor(time / 60);
@@ -39,3 +46,4 @@ function Cronometro({ isRunning, onTimeUp, onTimeUpdate }) {
 }
 
 export default Cronometro;
+
