@@ -122,9 +122,7 @@ export function Grid({ cards }) {
         <div style={{ display: finish ? 'block' : 'none', fontFamily: '"Orbitron", sans-serif', fontSize: '32px' }}>
           0:{newCronometro}
         </div>
-        <div>
-          <p>Movimentos: {moves} | Acertos: {matches}</p>
-        </div>
+        <p>Movimentos: {moves} | Acertos: {matches}</p>
         <button
           id="buttonGame"
           onClick={handleResultClick}
