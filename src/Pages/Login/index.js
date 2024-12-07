@@ -37,7 +37,7 @@ function Login() {
           <div className='divLogin'>
             <p>SAÚDE EM JOGO</p>
             <img src={Logo} alt='Cabeça com quebra-cabeça' title='Cabeça com quebra-cabeça' />
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <input
                 placeholder='Digite seu nome'
                 value={valueInput}
