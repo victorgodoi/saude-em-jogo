@@ -2,15 +2,21 @@ import './Grid.scss';
 import { Card } from '../Card';
 import { useRef, useState } from 'react';
 import { duplicateRegenerateSortArray } from '../../utils/card-utils';
+import Cronometro from '../Cronometro';
+import { useNavigate } from 'react-router-dom';
+
 export function Grid({ cards }) {
-  const [stateCards, setStateCards] = useState(() => {
-    return duplicateRegenerateSortArray(cards);
-  });
+  const [stateCards, setStateCards] = useState(() =>
+    duplicateRegenerateSortArray(cards)
+  );
+  const [matches, setMatches] = useState(0);
+  const [moves, setMoves] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [time, setTime] = useState(0); // Armazena o tempo decorrido
   const first = useRef(null);
   const second = useRef(null);
   const unflip = useRef(false);
-  const [matches, setMatches] = useState(0);
-  const [moves, setMoves] = useState(0);
+  const navigate = useNavigate(); // Hook para navegação
 
   const handleReset = () => {
     setStateCards(duplicateRegenerateSortArray(cards));
@@ -19,16 +25,26 @@ export function Grid({ cards }) {
     unflip.current = false;
     setMatches(0);
     setMoves(0);
+    setIsRunning(false);
+    setTime(0); // Reseta o tempo
+  };
+
+  const handleTimeUp = () => {
+    handleReset(); // Resetar o jogo
+  };
+
+  const handleTimeUpdate = (tempoDecorrido) => {
+    setTime(tempoDecorrido); // Atualiza o tempo decorrido
   };
 
   const handleClick = (id) => {
-    const newStateCards = stateCards.map((card) => {
-      // Se o id do cartão não for o id clicado, não faz nada
-      if (card.id !== id) return card;
-      // Se o cartão já estiver virado, não faz nada
-      if (card.flipped) return card;
+    if (!isRunning) {
+      setIsRunning(true); // Iniciar o cronômetro ao clicar no primeiro card
+    }
 
-      // Desviro possíveis cartas erradas
+    const newStateCards = stateCards.map((card) => {
+      if (card.id !== id || card.flipped) return card;
+
       if (unflip.current && first.current && second.current) {
         first.current.flipped = false;
         second.current.flipped = false;
@@ -37,29 +53,28 @@ export function Grid({ cards }) {
         unflip.current = false;
       }
 
-      // Virar o card
       card.flipped = true;
 
-      // Configura primeiro e segundo cartão clicados
       if (first.current === null) {
         first.current = card;
       } else if (second.current === null) {
         second.current = card;
       }
 
-      // Se eu tenho os dois cartão virados
-      // Posso checar se estão corretos
       if (first.current && second.current) {
         if (first.current.back === second.current.back) {
-          // A pessoa acertou
           first.current = null;
           second.current = null;
-          setMatches((m) => m + 1);
+          setMatches((m) => {
+            const novosMatches = m + 1;
+            if (novosMatches === 8) {
+              setIsRunning(false); // Para o cronômetro
+            }
+            return novosMatches;
+          });
         } else {
-          // A pessoa errou
           unflip.current = true;
         }
-
         setMoves((m) => m + 1);
       }
 
@@ -69,19 +84,44 @@ export function Grid({ cards }) {
     setStateCards(newStateCards);
   };
 
+  const handleResultClick = () => {
+    if (time >= 0 && time <= 15) {
+      navigate('/firstTime');
+    } else if (time >= 16 && time <= 30) {
+      navigate('/secondTime');
+    } else if (time >= 31 && time <= 45) {
+      navigate('/thirdTime');
+    } else if (time >= 46 && time <= 55) {
+      navigate('/fourthTime');
+    } else if (time >= 56 && time <= 59) {
+      navigate('/fifthTime');
+    }
+  };
+
   return (
     <>
       <div className="text">
-        <h1>Memory Game</h1>
-        <p>
-          Moves: {moves} | Matches: {matches} |{' '}
-          <button onClick={() => handleReset()}>Reset</button>
-        </p>
+        <Cronometro
+          isRunning={isRunning}
+          onTimeUp={handleTimeUp}
+          onTimeUpdate={handleTimeUpdate}
+        />
+        <div>
+          <p>Movimentos: {moves} | Acertos: {matches}</p>
+        </div>
+        <button
+          id="buttonGame"
+          onClick={handleResultClick}
+          disabled={matches !== 8}
+          style={{ backgroundColor: matches !== 8 ? '#bbbbbb' : '#FDDE00' }}
+        >
+          Resultado
+        </button>
       </div>
       <div className="grid">
-        {stateCards.map((card) => {
-          return <Card {...card} key={card.id} handleClick={handleClick} />;
-        })}
+        {stateCards.map((card) => (
+          <Card {...card} key={card.id} handleClick={handleClick} />
+        ))}
       </div>
     </>
   );
