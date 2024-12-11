@@ -1,7 +1,7 @@
 import '../FirstTime/FirstTime.scss';
-import Header from '../../Components/Header';
-import Footer from '../../Components/Footer';
-import BoxDiagnosis from '../../Components/BoxDiagnosis';
+import Header from '../../../Components/Header';
+import Footer from '../../../Components/Footer';
+import BoxDiagnosis from '../../../Components/BoxDiagnosis';
 
 function FourthTime() {
   return (

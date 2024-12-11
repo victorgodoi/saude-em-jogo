@@ -7,11 +7,11 @@ import Container from './Components/Container';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Diagnosis from './Pages/Diagnosis';
-import FirstTime from './Pages/FirstTime';
-import SecondTime from './Pages/SecondTime';
-import ThirdTime from './Pages/ThirdTime';
-import FourthTime from './Pages/FourthTime';
-import FifthTime from './Pages/FifthTime';
+import FirstTime from './Pages/Result/FirstTime';
+import SecondTime from './Pages/Result/SecondTime';
+import ThirdTime from './Pages/Result/ThirdTime';
+import FourthTime from './Pages/Result/FourthTime';
+import FifthTime from './Pages/Result/FifthTime';
 import Game from './Pages/Game';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
